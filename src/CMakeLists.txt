@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 2.6)
+project (FractalGen CXX)
+FIND_PACKAGE (OPENCL)
+add_executable(FractalGen fractalgen.cpp lodepng.cpp)
+include_directories( ${OPENCL_INCLUDE_DIR} )
+TARGET_LINK_LIBRARIES (FractalGen ${OPENCL_LIBRARIES})
